@@ -1,0 +1,10 @@
+<turbo-stream target="like-post-<%= @post.id %>">
+  <template>
+    <% if current_user.likes.exists?(post: @post) %>
+      <%= button_to "Unlike", post_like_path(@post), method: :delete, class: "like-button unlike" %>
+    <% else %>
+      <%= button_to "Like", post_like_path(@post), method: :post, class: "like-button like" %>
+    <% end %>
+    <p class="likes-count"><%= @post.likes.count %> Likes</p>
+  </template>
+</turbo-stream>

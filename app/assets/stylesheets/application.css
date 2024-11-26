@@ -1,0 +1,344 @@
+/* General */
+/* Header */
+.header {
+  background-color: #4267B2;
+  color: white;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between; /* จัดระยะห่างซ้าย-ขวา */
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none; /* ไม่มีเส้นใต้ */
+  color: white; /* สีขาว */
+}
+
+.header-right {
+  display: flex;
+  gap: 15px; /* ระยะห่างระหว่างลิงก์ */
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 15px;
+  background-color: #365899; /* สีพื้นหลังของลิงก์ */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.header-link:hover {
+  background-color: #2d4373; /* สีเมื่อ Hover */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: white;
+  padding: 10px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #365899;
+}
+
+/* Feed */
+.feed {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.post-author {
+  color: #555;
+}
+
+.post-content {
+  margin: 10px 0;
+}
+
+/* Actions */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-action-link {
+  color: #4267B2;
+  text-decoration: none;
+}
+
+.post-action-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Comments */
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.comment-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: #365899;
+}
+
+.no-posts {
+  text-align: center;
+  color: #777;
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  align-items: center; /* จัดให้อยู่แนวกลาง */
+  margin-top: 10px;
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ระยะห่างระหว่างตัวเลขและปุ่ม */
+}
+
+.likes-count {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end; /* จัดชิดขวา */
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+/* ปุ่มทั้งหมด */
+.button {
+  display: inline-block;
+  padding: 8px 15px; /* ขนาดปุ่มให้เท่ากัน */
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* ปุ่ม Like */
+.like-button.like {
+  padding: 8px 15px;
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.like-button.unlike {
+  padding: 8px 15px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.like-button:hover {
+  opacity: 0.9;
+}
+
+/* ปุ่ม Edit */
+.button-edit {
+  background-color: #ffa500;
+  color: white;
+}
+
+.button-edit:hover {
+  background-color: #e69500;
+}
+
+/* ปุ่ม Delete */
+.button-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.button-delete:hover {
+  background-color: #d32f2f;
+}
+
+/* post */
+/* General Styling */
+.body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4267B2;
+}
+
+/* Form Styling */
+.form-container {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.form-input.textarea {
+  resize: none;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.create-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary {
+  background-color: #4267B2;
+  color: white;
+  border: none;
+}
+
+.button-primary:hover {
+  background-color: #365899;
+}
+
+.button-secondary {
+  background-color: #ddd;
+  color: #333;
+  border: none;
+}
+
+.button-secondary:hover {
+  background-color: #ccc;
+}
