@@ -51,9 +51,9 @@
               <p class="likes-count"><%= post.likes.count %> Likes</p>
               <% if user_signed_in? %>
                 <% if current_user.likes.exists?(post: post) %>
-                  <%= button_to "Unlike", post_like_path(post), remote: true,method: :delete, class: "like-button unlike" %>
+                  <%= button_to "Unlike", post_like_path(post), method: :delete, class: "like-button unlike" %>
                 <% else %>
-                  <%= button_to "Like", post_like_path(post), remote: true,method: :post, class: "like-button like" %>
+                  <%= button_to "Like", post_like_path(post), method: :post, class: "like-button like" %>
                 <% end %>
               <% end %>
             </div>
