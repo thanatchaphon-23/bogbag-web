@@ -1,4 +1,3 @@
-/* General */
 /* Header */
 .header {
   background-color: #4267B2;
@@ -19,9 +18,18 @@
   color: white; /* สีขาว */
 }
 
+.header-left,
 .header-right {
   display: flex;
-  gap: 15px; /* ระยะห่างระหว่างลิงก์ */
+  align-items: center;
+  gap: 10px;
+}
+
+.header-center {
+  flex: 1; /* ใช้พื้นที่ตรงกลาง */
+  display: flex;
+  justify-content: center; /* จัดตำแหน่ง Search ให้อยู่ตรงกลาง */
+  align-items: center;
 }
 
 .header-link {
@@ -50,14 +58,8 @@ body {
   background-color: white;
   padding: 10px 20px;
   margin: 20px auto;
-  max-width: 800px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.search-group {
-  display: flex;
-  align-items: center;
 }
 
 .search-input {
@@ -66,15 +68,29 @@ body {
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-right: 10px;
+
 }
 
 .search-button {
-  padding: 10px 20px;
-  background-color: #4267B2;
+  background-color: #365899; /* สีพื้นหลังของลิงก์ */
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.search-form {
+  display: flex;
+  align-items: center; /* จัดปุ่มและกล่องให้อยู่ในแนวเดียวกัน */
+  justify-content: center; /* จัดให้อยู่ตรงกลาง */
+  gap: 10px; /* เพิ่มช่องว่างระหว่างกล่องและปุ่ม */
+  width: 800px; /* ปรับให้เต็มพื้นที่ที่มี */
+
 }
 
 .search-button:hover {
@@ -96,17 +112,37 @@ body {
   padding: 20px 0;
 }
 
+/* กล่องครอบเนื้อหาโพสต์ */
+.post-content-box {
+  background-color: #f9f9f9; /* สีพื้นหลัง */
+  border: 1px solid #ddd; /* ขอบ */
+  border-radius: 8px; /* มุมมน */
+  padding: 15px; /* ระยะห่างด้านใน */
+  margin-bottom: 20px; /* เว้นระยะด้านล่าง */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+/* สไตล์หัวข้อ */
 .post-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px; /* เว้นระยะด้านล่าง */
+  color: #4267B2;
 }
 
-.post-author {
-  color: #555;
-}
-
+/* สไตล์เนื้อหา */
 .post-content {
-  margin: 10px 0;
+  font-size: 16px;
+  margin-bottom: 10px; /* เว้นระยะด้านล่าง */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* สไตล์ผู้เขียน */
+.post-author {
+  font-size: 14px;
+  color: #777;
+  text-align: right; /* ชิดขวา */
 }
 
 /* Actions */
@@ -125,7 +161,6 @@ body {
   text-decoration: underline;
 }
 
-
 /* Comments */
 .comments {
   margin-top: 20px;
@@ -136,10 +171,16 @@ body {
 }
 
 .comment-input {
-  width: 100%;
+  width: 100%; /* ปรับให้เต็มพื้นที่ */
+  max-width: 800px; /* กำหนดขนาดความกว้างสูงสุด */
+  height: 100px; /* ความสูงตายตัว */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  resize: none; /* ปิดการปรับขนาดของกล่อง */
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .comment-button {
@@ -341,4 +382,196 @@ body {
 
 .button-secondary:hover {
   background-color: #ccc;
+}
+
+/* Sign up Page Styling */
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.signup-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4267B2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.signup-form-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.signup-form-hint {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.signup-form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.signup-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-primary {
+  background-color: #4267B2;
+  color: white;
+  border: none;
+}
+
+.signup-primary:hover {
+  background-color: #365899;
+}
+
+.signup-links-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signup-links-container a {
+  color: #4267B2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.signup-links-container a:hover {
+  text-decoration: underline;
+}
+
+
+/* Login */
+/* General Styling */
+.Login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4267B2;
+}
+
+/* กล่องครอบข้อความ Login */
+.login-box {
+  background-color: #f9f9f9; /* สีพื้นหลัง */
+  border: 1px solid #ddd; /* ขอบกล่อง */
+  border-radius: 8px; /* มุมมน */
+  padding: 15px; /* ระยะห่างด้านใน */
+  margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.login-prompt {
+  margin: 0;
+  font-size: 15px;
+  color: #555; /* สีข้อความ */
+}
+
+.login-link {
+  color: #4267B2; /* สีลิงก์ */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline; /* เส้นใต้เมื่อ Hover */
+}
+
+
+/* Form Styling */
+.form-checkbox {
+  margin-right: 8px;
+}
+
+.form-checkbox-label {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Buttons */
+.login-button {
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Links */
+.links-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.links-container a {
+  color: #4267B2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links-container a:hover {
+  text-decoration: underline;
 }

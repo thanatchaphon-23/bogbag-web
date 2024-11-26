@@ -10,73 +10,76 @@
   <!-- Header -->
   <header class="header">
     <div class="header-left">
-        <%= link_to "BogBag", root_path, class: "header-title" %>
+      <%= link_to "BogBagBook", root_path, class: "header-title" %>
     </div>
-    <nav class="header-right">
-        <% if user_signed_in? %>
-            <%= link_to "Create Post", new_post_path, class: "header-link" %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "header-link" %>
-        <% else %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "header-link" %>
-            <%= link_to "Login", new_user_session_path, class: "header-link" %>
-        <% end %>
-    </nav>
-  </header>
-
-
-  <!-- Search Bar -->
-  <div class="search-bar">
-    <%= form_with(url: posts_path, method: :get, local: true) do |form| %>
-      <div class="search-group">
+    <div class="header-center">
+      <!-- Search Bar -->
+      <%= form_with(url: posts_path, method: :get, local: true, class: "search-form") do |form| %>
         <%= form.text_field :query, placeholder: "Search posts...", class: "search-input" %>
         <%= form.submit "Search", class: "search-button" %>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+    <nav class="header-right">
+      <!-- Right menu -->
+      <% if user_signed_in? %>
+        <%= link_to "Create Post", new_post_path, class: "header-link" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "header-link" %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "header-link" %>
+        <%= link_to "Login", new_user_session_path, class: "header-link" %>
+      <% end %>
+    </nav>
+  </header>
 
   <!-- Feed -->
   <div class="feed">
     <% if @posts.any? %>
       <% @posts.each do |post| %>
         <div class="post">
-          <div class="post-header">
+          <!-- Post Content -->
+          <div class="post-content-box">
             <h2 class="post-title"><%= post.title %></h2>
+            <p class="post-content"><%= post.content %></p>
             <p class="post-author"><small>Posted by: <%= post.user.username if post.user %></small></p>
+            <p class="post-author"><small><%= post.created_at.strftime("%B %d, %Y %H:%M") %></small></p>
           </div>
-          <p class="post-content"><%= post.content %></p>
 
           <!-- Post Actions -->
           <div class="post-actions">
             <!-- Like Section -->
-
-              <div class="like-section">
-                <p class="likes-count"><%= post.likes.count %> Likes</p>
-                <% if user_signed_in? %>
-                  <% if current_user.likes.exists?(post: post) %>
-                    <%= button_to "Unlike", post_like_path(post), method: :delete, class: "like-button unlike" %>
-                  <% else %>
-                    <%= button_to "Like", post_like_path(post), method: :post, class: "like-button like" %>
-                  <% end %>
+            <div class="like-section">
+              <p class="likes-count"><%= post.likes.count %> Likes</p>
+              <% if user_signed_in? %>
+                <% if current_user.likes.exists?(post: post) %>
+                  <%= button_to "Unlike", post_like_path(post), remote: true,method: :delete, class: "like-button unlike" %>
+                <% else %>
+                  <%= button_to "Like", post_like_path(post), remote: true,method: :post, class: "like-button like" %>
                 <% end %>
-              </div>
-          
-              <!-- Edit and Delete Buttons -->
-              <% if user_signed_in? && post.user == current_user %>
-                <div class="action-buttons">
-                  <%= link_to "Edit", edit_post_path(post), class: "button button-edit" %>
-                  <%= button_to "Delete", post_path(post), method: :delete, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
-                </div>
               <% end %>
+            </div>
 
+            <!-- Edit and Delete Buttons -->
+            <% if user_signed_in? && post.user == current_user %>
+              <div class="action-buttons">
+                <%= link_to "Edit", edit_post_path(post), class: "button button-edit" %>
+                <%= button_to "Delete", post_path(post), method: :delete, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
+              </div>
+            <% end %>
           </div>
-          
-          <!-- Comments -->
+
+          <!-- Comments Section -->
           <div class="comments">
             <p class="comments-count"><%= post.comments.count %> Comments</p>
             <% if user_signed_in? %>
               <% post.comments.each do |comment| %>
                 <div class="comment">
                   <p><strong><%= comment.user.username %>:</strong> <%= comment.content %></p>
+                  <!-- แสดงปุ่มลบถ้าเป็นเจ้าของความคิดเห็น -->
+                  <% if comment.user == current_user %>
+                    <div class="delete-comment">
+                      <%= button_to "Delete", post_comment_path(post, comment), method: :delete, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
+                    </div>
+                  <% end %>
                 </div>
               <% end %>
 
@@ -90,7 +93,12 @@
                 <% end %>
               </div>
             <% else %>
-              <p class="login-prompt">Log in to comment.</p>
+              <!-- Login Prompt -->
+              <div class="login-box">
+                <p class="login-prompt">
+                  <%= link_to "Login", new_user_session_path, class: "login-link" %> to comment.
+                </p>
+              </div>
             <% end %>
           </div>
         </div>

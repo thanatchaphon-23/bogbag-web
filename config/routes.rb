@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # เส้นทางสำหรับ Posts และ Likes
   resources :posts, only: [:index, :new, :create, :edit, :update, :destroy] do
     resource :like, only: [:create, :destroy] # เส้นทางสำหรับ Like
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
 
   # กำหนด health check สำหรับการตรวจสอบสถานะ

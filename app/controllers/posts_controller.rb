@@ -6,8 +6,9 @@ class PostsController < ApplicationController
     def index
       if params[:query].present?
         @posts = Post.where("title LIKE :query OR content LIKE :query", query: "%#{params[:query]}%")
+                     .order(created_at: :desc) # เรียงโพสต์จากใหม่ไปเก่า
       else
-        @posts = Post.all
+        @posts = Post.all.order(created_at: :desc) # เรียงโพสต์จากใหม่ไปเก่า
       end
     end
   
