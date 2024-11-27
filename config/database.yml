@@ -4,69 +4,69 @@
 # #   Ensure the SQLite 3 gem is defined in your Gemfile
 # #   gem "sqlite3"
 # #
-# default: &default
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
-# development:
-#   <<: *default
-#   database: storage/development.sqlite3
+development:
+  <<: *default
+  database: storage/development.sqlite3
 
 # # Warning: The database defined as "test" will be erased and
 # # re-generated from your development database when you run "rake".
 # # Do not set this db to the same as development or production.
-# test:
-#   <<: *default
-#   database: storage/test.sqlite3
+test:
+  <<: *default
+  database: storage/test.sqlite3
 
 
 # # Store production database in the storage/ directory, which by default
 # # is mounted as a persistent Docker volume in config/deploy.yml.
-# production:
-#   primary:
-#     <<: *default
-#     database: storage/production.sqlite3
-#   cache:
-#     <<: *default
-#     database: storage/production_cache.sqlite3
-#     migrations_paths: db/cache_migrate
-#   queue:
-#     <<: *default
-#     database: storage/production_queue.sqlite3
-#     migrations_paths: db/queue_migrate
-#   cable:
-#     <<: *default
-#     database: storage/production_cable.sqlite3
-#     migrations_paths: db/cable_migrate
-
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  <<: *default
-  database: myapp_development
-  username: <%= ENV['DB_USERNAME'] || 'georgie-mac' %> # ใช้ username ที่ตรงกับ Local
-  password: <%= ENV['DB_PASSWORD'] || '' %>       # ใช้ password ของ PostgreSQL
-  host: <%= ENV['DB_HOST'] || 'localhost' %>          # ใช้ localhost สำหรับ development
-  port: <%= ENV['DB_PORT'] || 5432 %>                 # ค่า default port คือ 5432
-
-test:
-  <<: *default
-  database: myapp_test
-  username: <%= ENV['DB_USERNAME'] || 'georgie-mac' %>
-  password: <%= ENV['DB_PASSWORD'] || '2307' %>
-  host: <%= ENV['DB_HOST'] || 'localhost' %>
-  port: <%= ENV['DB_PORT'] || 5432 %>
-
 production:
-  <<: *default
-  database: <%= ENV['myapp_production_crpp'] %>                     # ชื่อฐานข้อมูลใน Production
-  username: <%= ENV['myapp_production_crpp_user'] %>                # Username สำหรับ Production
-  password: <%= ENV['UP32hecnJRFRqsPIX3X5vx1YXMUGPXSC'] %>                # Password สำหรับ Production
-  host: <%= ENV['dpg-ct3ns98gph6c73c1galg-a'] %>                        # Host ของฐานข้อมูลใน Production
-  port: <%= ENV['DB_PORT'] || 5432 %>                # Default port (5432)
+  primary:
+    <<: *default
+    database: storage/production.sqlite3
+  cache:
+    <<: *default
+    database: storage/production_cache.sqlite3
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *default
+    database: storage/production_queue.sqlite3
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *default
+    database: storage/production_cable.sqlite3
+    migrations_paths: db/cable_migrate
+
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+# development:
+#   <<: *default
+#   database: myapp_development
+#   username: <%= ENV['DB_USERNAME'] || 'georgie-mac' %> # ใช้ username ที่ตรงกับ Local
+#   password: <%= ENV['DB_PASSWORD'] || '' %>       # ใช้ password ของ PostgreSQL
+#   host: <%= ENV['DB_HOST'] || 'localhost' %>          # ใช้ localhost สำหรับ development
+#   port: <%= ENV['DB_PORT'] || 5432 %>                 # ค่า default port คือ 5432
+
+# test:
+#   <<: *default
+#   database: myapp_test
+#   username: <%= ENV['DB_USERNAME'] || 'georgie-mac' %>
+#   password: <%= ENV['DB_PASSWORD'] || '2307' %>
+#   host: <%= ENV['DB_HOST'] || 'localhost' %>
+#   port: <%= ENV['DB_PORT'] || 5432 %>
+
+# production:
+#   <<: *default
+#   database: <%= ENV['myapp_production_crpp'] %>                     # ชื่อฐานข้อมูลใน Production
+#   username: <%= ENV['myapp_production_crpp_user'] %>                # Username สำหรับ Production
+#   password: <%= ENV['UP32hecnJRFRqsPIX3X5vx1YXMUGPXSC'] %>                # Password สำหรับ Production
+#   host: <%= ENV['dpg-ct3ns98gph6c73c1galg-a'] %>                        # Host ของฐานข้อมูลใน Production
+#   port: <%= ENV['DB_PORT'] || 5432 %>                # Default port (5432)
 
 
