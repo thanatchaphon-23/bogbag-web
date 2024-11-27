@@ -43,7 +43,7 @@
               <small>Posted by: <%= post.user.username if post.user %></small>
             </p>
             <p class="post-author">
-              <small><%= post.created_at.strftime("%B %d, %Y %H:%M") %></small>
+              <small><%= post.created_at.in_time_zone('Bangkok').strftime("%B %d, %Y %H:%M") %></small>
             </p>
           </div>
 

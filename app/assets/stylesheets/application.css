@@ -1,25 +1,31 @@
-/* Title (Logo) */
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f8c8dc, #fad0c4); /* ไล่สีชมพู */
+  margin: 0;
+  padding: 0;
+  font-size: 1.5vmin; /* ขนาดตัวอักษรสัมพันธ์กับขนาดจอ */
+}
+
 /* Header */
 .header {
-  background: linear-gradient(90deg, #ffb6c1, #ff91af); /* ไล่สีชมพูเข้มขึ้น */
-  padding: 20px 30px;
+  background: linear-gradient(90deg, #ffb6c1, #ff91af);
+  padding: 2vh 3vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid #e89ba9; /* เส้นขอบล่างสีชมพูเข้ม */
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* เพิ่มเงานุ่ม */
+  border-bottom: 0.5vmin solid #e89ba9;
+  box-shadow: 0 0.3vmin 0.8vmin rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-/* Title (Logo) */
 .header-title {
-  font-size: 28px;
+  font-size: 3vmin;
   font-weight: bold;
-  color: white; /* สีขาว */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* เงาเล็กน้อย */
-  text-decoration: none;
+  color: white;
+  text-shadow: 0.2vmin 0.2vmin 0.4vmin rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -28,15 +34,14 @@
   transform: scale(1.05);
 }
 
-/* Header Sections */
 .header-left,
 .header-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1vw;
 }
 
-/* Search Bar Section */
+/* Search Bar */
 .header-center {
   flex: 1;
   display: flex;
@@ -46,696 +51,143 @@
 .search-bar {
   display: flex;
   align-items: center;
-  background: #ffffff; /* พื้นหลังขาว */
-  border-radius: 25px; /* มุมมน */
-  padding: 5px 15px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-  border: 1px solid #e89ba9; /* ขอบชมพูเข้ม */
+  background: #ffffff;
+  border-radius: 2vmin;
+  padding: 1vh 2vw;
+  box-shadow: 0 0.3vmin 0.6vmin rgba(0, 0, 0, 0.1);
+  border: 0.3vmin solid #e89ba9;
+  width: 50vw;
 }
 
 .search-bar input {
   border: none;
   outline: none;
-  padding: 10px;
-  font-size: 16px;
+  padding: 1.5vh;
+  font-size: 2vmin;
   flex: 1;
-  border-radius: 25px;
+  border-radius: 2vmin;
 }
 
 .search-bar button {
-  background: #ff85a2; /* สีชมพูสด */
+  background: #ff85a2;
   border: none;
   color: white;
-  padding: 8px 20px;
-  border-radius: 25px;
+  padding: 1vh 3vw;
+  border-radius: 2vmin;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 2vmin;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .search-bar button:hover {
-  background: #ff6398; /* สีชมพูเข้ม */
+  background: #ff6398;
   transform: scale(1.05);
 }
 
-/* Header Links (Buttons) */
-.header-link {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 20px;
-  background: #ff85a2; /* สีชมพูสด */
-  border-radius: 25px;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เงาเบา */
-}
-
-.header-link:hover {
-  background: #ff6398; /* สีชมพูเข้ม */
-  transform: scale(1.1);
-}
-
-
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #f8c8dc, #fad0c4);
-  margin: 0;
-  padding: 0;
-}
-
-/* Search Bar */
-.search-bar {
-  background-color: #fff5f8; /* พื้นหลังชมพูอ่อน */
-  padding: 15px 25px;
-  margin: 20px auto;
-  border-radius: 16px; /* มุมมน */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-  border: 2px solid #ffc1d6; /* ขอบชมพูอ่อน */
-}
-
-/* Search Input */
-.search-input {
-  flex: 1;
-  padding: 12px;
-  border: 1px solid #ffc1d6; /* ขอบชมพู */
-  border-radius: 16px; /* มุมมน */
-  margin-right: 10px;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-input:focus {
-  border-color: #ff85a2; /* เปลี่ยนสีเมื่อ focus */
-  box-shadow: 0 0 5px rgba(255, 133, 162, 0.5);
-}
-
-/* Search Button */
-.search-button {
-  background-color: #ff85a2; /* สีชมพูสด */
-  color: white;
-  border: none;
-  border-radius: 16px; /* มุมมน */
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.search-button:hover {
-  background-color: #ff6398; /* สีชมพูเข้มเมื่อ hover */
-  transform: scale(1.05); /* ขยายเล็กน้อย */
-}
-
-/* Search Form */
-.search-form {
-  display: flex;
-  align-items: center; /* จัดปุ่มและกล่องให้อยู่ในแนวเดียวกัน */
-  justify-content: center; /* จัดให้อยู่ตรงกลาง */
-  gap: 10px; /* เพิ่มช่องว่างระหว่างกล่องและปุ่ม */
-  width: 700px; /* ปรับความกว้าง */
-}
-
 /* Feed */
-/* Feed Container */
 .feed {
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 80vw;
+  margin: 2vh auto;
   background-color: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Individual Post */
-.post {
-  border-bottom: 1px solid #f7d4e6;
-  padding: 20px 0;
-}
-
-/* Post Content Box */
-.post-content-box {
-  background: linear-gradient(135deg, #ffe1ec, #ffd1e8); /* ไล่สีชมพู */
-  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
-  border-radius: 16px; /* มุมมน */
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-}
-
-/* Post Title */
-.post-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ff6699; /* ชมพูเข้ม */
+  padding: 2vh;
+  border-radius: 2vmin;
+  box-shadow: 0 0.4vmin 0.8vmin rgba(0, 0, 0, 0.1);
 }
 
 /* Post Content */
+.post-content-box {
+  background: linear-gradient(135deg, #ffe1ec, #ffd1e8);
+  border: 0.3vmin solid #ffc1d6;
+  border-radius: 2vmin;
+  padding: 2vh;
+  margin-bottom: 2vh;
+  box-shadow: 0 0.4vmin 1vmin rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+  font-size: 2.5vmin;
+  font-weight: bold;
+  margin-bottom: 1vh;
+  color: #ff6699;
+}
+
 .post-content {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 2vmin;
   color: #555;
   line-height: 1.6;
 }
 
-/* Post Author */
-.post-author {
-  font-size: 14px;
-  color: #888;
-  text-align: right;
-}
-
-/* Post Actions */
-.post-actions {
+/* Like Section */
+.like-section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  gap: 1vw;
 }
 
-/* Post Action Links */
-.post-action-link {
-  color: #ff85a2;
-  text-decoration: none;
+.likes-count {
+  font-size: 1.8vmin;
+  color: #555;
 }
 
-.post-action-link:hover {
-  text-decoration: underline;
-}
-
-/* Comments Section */
-.comments {
-  margin-top: 20px;
-}
-
-.comments-count {
-  margin: 0;
-  margin-bottom: 10px;
-  font-size: 15px;
-  color: #555555;
-}
-
-.comment {
-  margin-bottom: 10px;
-}
-
-/* Comment Input */
-.comment-input {
-  width: 100%;
-  max-width: 800px;
-  height: 100px;
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid #ffc1d6;
-  border-radius: 16px;
-  resize: none;
-  box-sizing: border-box;
-  font-size: 14px;
-  line-height: 1.5;
-  background-color: #fff5f8; /* ชมพูอ่อน */
-}
-
-/* Comment Button */
-.comment-button {
-  margin-top: 10px;
-  padding: 10px 20px;
+.like-button {
+  padding: 0.8vh 1.5vw;
+  font-size: 1.8vmin;
   background-color: #ff85a2;
   color: white;
   border: none;
-  border-radius: 16px;
+  border-radius: 1vmin;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.like-button:hover {
+  background-color: #ff6398;
+  transform: scale(1.05);
+}
+
+/* Comments Section */
+.comment-input {
+  width: 100%;
+  height: 10vh;
+  margin-top: 1vh;
+  padding: 1vh;
+  border: 0.3vmin solid #ffc1d6;
+  border-radius: 2vmin;
+  background-color: #fff5f8;
+  font-size: 1.8vmin;
+}
+
+.comment-button {
+  margin-top: 1vh;
+  padding: 1vh 2vw;
+  background-color: #ff85a2;
+  color: white;
+  border: none;
+  border-radius: 2vmin;
+  cursor: pointer;
+  font-size: 1.8vmin;
   transition: background 0.3s ease;
 }
 
 .comment-button:hover {
-  background-color: #ff6699;
+  background-color: #ff6398;
 }
 
-/* No Posts */
-.no-posts {
-  text-align: center;
-  color: #888;
-}
-
-/* Like Button */
-/* Like Section */
-.like-section {
-  display: flex;
-  align-items: center; /* จัดแนวให้อยู่ตรงกลาง */
-  gap: 10px; /* ระยะห่างระหว่างจำนวนไลค์และปุ่ม */
-}
-
-.likes-count {
-  margin: 0;
-  font-size: 14px;
-  color: #555555;
-}
-
-/* Like Button */
-.like-button {
-  padding: 5px 10px;
-  font-size: 14px;
-  background-color: #ff85a2; /* สีชมพูสด */
-  color: white;
-  border: none; /* เอาขอบออก */
-  border-radius: 8px; /* มุมมน */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.like-button:hover {
-  background-color: #ff6398; /* สีชมพูเข้ม */
-  transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ Hover */
-}
-
-
-/* Action Buttons */
-.action-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-/* All Buttons */
-.button {
-  display: inline-block;
-  padding: 8px 15px;
-  font-size: 14px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 16px;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-/* Like Button */
-.like-button.like {
-  background-color: #ff85a2;
-  color: white;
-}
-
-.like-button.unlike {
-  background-color: #f44336;
-  color: white;
-}
-
-.like-button:hover {
-  opacity: 0.9;
-}
-
-/* Edit Button */
-.button-edit {
-  background-color: #ffb6c1; /* ชมพูพาสเทล */
-  color: white;
-}
-
-.button-edit:hover {
-  background-color: #ff99aa;
-}
-
-/* Delete Button */
-.button-delete {
-  background-color: #f44336;
-  color: white;
-}
-
-.button-delete:hover {
-  background-color: #d32f2f;
-}
-
-/* post */
-/* General Styling */
-.body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f8c8dc, #fad0c4); /* ไล่สีชมพู */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.page-container {
-  width: 100%;
-  max-width: 600px;
-  background-color: #ffffff; /* สีขาว */
-  padding: 30px 40px;
-  border-radius: 20px; /* มุมมน */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-}
-
-.page-title {
-  font-size: 26px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ff6398; /* ชมพูสด */
-  text-transform: uppercase;
-}
-
-/* Form Styling */
-.form-container {
-  margin-top: 20px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: block;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #ff6398; /* ชมพูสด */
-}
-
-.form-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
-  border-radius: 16px; /* มุมมน */
-  box-sizing: border-box;
-  background: #fff5f8; /* พื้นหลังชมพูอ่อน */
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-input.textarea {
-  resize: none; /* ปิดการปรับขนาด */
-}
-
-.form-input:focus {
-  border-color: #ff85a2; /* ขอบชมพูสดเมื่อ focus */
-  box-shadow: 0 0 6px rgba(255, 133, 162, 0.5); /* เพิ่มเงาเมื่อ focus */
-}
-
-/* Buttons */
-.form-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.create-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 20px; /* มุมมน */
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Primary Button */
-.button-primary {
-  background-color: #ff85a2; /* ชมพูสด */
-  color: white;
-  border: none;
-}
-
-.button-primary:hover {
-  background-color: #ff6398; /* ชมพูเข้ม */
-  transform: scale(1.05); /* ขยายเล็กน้อย */
-}
-
-/* Secondary Button */
-.button-secondary {
-  background-color: #ff81a5; /* สีเทาอ่อน */
-  color: #ffffff;
-  border: none;
-}
-
-.button-secondary:hover {
-  background-color: #ccc; /* สีเทาเข้ม */
-  transform: scale(1.05); /* ขยายเล็กน้อย */
-}
-
-
-/* Sign up Page Styling */
-/* Container */
-
-.signup_body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f8c8dc, #fad0c4); /* ไล่สีชมพู */
-  margin: 0;
-  height: 100vh; /* ใช้เต็มความสูงของ viewport */
-  display: flex; /* ใช้ Flexbox */
-  justify-content: center; /* จัดให้อยู่กลางแนวนอน */
-  align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
-}
-
-.signup-container {
-  background: #fff5f8; /* พื้นหลังชมพูอ่อน */
-  width: 400px;
-  padding: 30px 40px;
-  border-radius: 20px; /* มุมมน */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-  border: 2px solid #ffa6c9; /* ขอบชมพู */
-  text-align: center; /* จัดเนื้อหากลาง */
-}
-/* Title */
-.signup-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ff6398; /* สีชมพูสด */
-}
-
-.signup-subtitle {
-  font-size: 1rem;
-  color: #666; /* สีเทาอ่อน */
-  margin-bottom: 20px;
-}
-
-/* Form */
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* เพิ่มระยะห่างระหว่างกลุ่มฟอร์ม */
-}
-
-.signup-form-group {
-  display: flex;
-  flex-direction: column;
-  text-align: left; /* ชิดซ้ายในกลุ่มฟอร์ม */
-}
-
-.signup-form-label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #ff6398; /* สีชมพูสด */
-}
-
-.signup-form-input {
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
-  border-radius: 16px; /* มุมมน */
-  background: #fff; /* พื้นหลังสีขาว */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.signup-form-input:focus {
-  border-color: #ff85a2; /* สีชมพูสดเมื่อ focus */
-  box-shadow: 0 0 6px rgba(255, 133, 162, 0.5); /* เพิ่มเงาเมื่อ focus */
-}
-
-/* Button */
-.signup-button {
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 20px; /* มุมมน */
-  border: none;
-  background: #ff85a2; /* สีชมพูสด */
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.signup-button:hover {
-  background: #ff6398; /* สีชมพูเข้ม */
-  transform: scale(1.05); /* ขยายเล็กน้อย */
-}
-
-/* Links */
-.signup-links-container {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.signup-links-container a {
-  color: #ff6398; /* สีชมพูสด */
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.signup-links-container a:hover {
-  text-decoration: underline;
-}
-
-
-/* Login Body */
-/* Body Styling */
-.Login-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif; /* เปลี่ยนฟอนต์ให้ทันสมัย */
-  background: linear-gradient(135deg, #f8c8dc, #fad0c4); /* ไล่สีชมพู */
-  margin: 0;
-  padding: 0;
-}
-
-/* Login Container */
-.login-container {
-  width: 100%;
-  max-width: 400px;
-  background-color: #fff; /* พื้นหลังขาว */
-  padding: 30px 40px;
-  border-radius: 20px; /* มุมมน */
-  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4); /* เงาสีชมพู */
-  text-align: center;
-}
-
-/* Login Title */
-.login-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #ff69b4; /* ชมพูสด */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-/* Form Inputs */
-.form-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
-  border-radius: 12px; /* มุมมน */
-  background-color: #fff5f8; /* สีพื้นหลังชมพูอ่อน */
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาภายใน */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-input:focus {
-  border-color: #ff85a2; /* ชมพูสดเมื่อ Focus */
-  box-shadow: 0 0 6px rgba(255, 133, 162, 0.5);
-  outline: none;
-}
-
-/* Form Labels */
-.form-label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #ff69b4; /* ชมพูสด */
-  margin-bottom: 5px;
-}
-
-/* Remember Me */
-.form-checkbox-label {
-  font-size: 14px;
-  color: #d87093; /* ชมพูปานกลาง */
-}
-
-/* Buttons */
-.login-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px; /* มุมมน */
-  background-color: #ff85a2; /* ชมพูสด */
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.login-button:hover {
-  background-color: #ff6398; /* ชมพูเข้ม */
-  transform: scale(1.05); /* ขยายเล็กน้อย */
-}
-
-/* Links */
-.links-container a {
-  color: #ff6398; /* สีลิงก์ชมพู */
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.links-container a:hover {
-  color: #ff1493; /* ชมพูเข้ม */
-  text-decoration: underline;
-}
-
-/* Login Box Styling */
-.login-box {
-  background-color: #ffe6f2; /* สีชมพูอ่อน */
-  border: 2px solid #ff99cc; /* ขอบสีชมพูเข้ม */
-  border-radius: 12px; /* มุมมน */
-  padding: 20px; /* ระยะห่างด้านใน */
-  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
-  margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
-}
-
-.login-prompt {
-  font-size: 16px; /* ขนาดข้อความ */
-  color: #ff66b3; /* สีข้อความ */
-  font-weight: bold;
-  margin: 0;
-}
-
-.login-link {
-  color: #ff66b3; /* สีลิงก์ */
-  font-weight: bold;
-  transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์เวลา hover */
-}
-
-.login-link:hover {
-  color: #cc0066; /* สีเมื่อ hover */
-  text-decoration: underline; /* เพิ่มเส้นใต้เมื่อ hover */
-}
-
-/* Footer */
 /* Footer */
 .footer {
-  padding: 15px 20px;
+  padding: 2vh;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.5vmin;
   color: #ff6699;
 }
 
 .footer a {
-  color: #ff85a2; /* สีลิงก์ */
+  color: #ff85a2;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .footer a:hover {
-  color: #ff6699; /* สีลิงก์เมื่อ hover */
+  color: #ff6699;
 }
-
-.footer p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-
