@@ -1,23 +1,50 @@
 /* Header */
+/* Header */
 .header {
-  background-color: #4267B2;
-  color: white;
-  padding: 20px 20px;
+  background: linear-gradient(90deg, #ff85a2, #ff6398); /* ไล่สีชมพูเข้ม */
+  padding: 20px 30px;
   display: flex;
-  justify-content: space-between; /* จัดระยะห่างซ้าย-ขวา */
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  border-bottom: 3px solid #e57390; /* เส้นขอบล่างสีชมพูเข้ม */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงานุ่ม */
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
+/* Title (Logo) */
+/* Header */
+/* Header */
+.header {
+  background: linear-gradient(90deg, #ffb6c1, #ff91af); /* ไล่สีชมพูเข้มขึ้น */
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #e89ba9; /* เส้นขอบล่างสีชมพูเข้ม */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* เพิ่มเงานุ่ม */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Title (Logo) */
 .header-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 0;
-  cursor: pointer;
-  text-decoration: none; /* ไม่มีเส้นใต้ */
   color: white; /* สีขาว */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* เงาเล็กน้อย */
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+.header-title:hover {
+  transform: scale(1.05);
+}
+
+/* Header Sections */
 .header-left,
 .header-right {
   display: flex;
@@ -25,135 +52,189 @@
   gap: 10px;
 }
 
+/* Search Bar Section */
 .header-center {
-  flex: 1; /* ใช้พื้นที่ตรงกลาง */
+  flex: 1;
   display: flex;
-  justify-content: center; /* จัดตำแหน่ง Search ให้อยู่ตรงกลาง */
-  align-items: center;
+  justify-content: center;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #ffffff; /* พื้นหลังขาว */
+  border-radius: 25px; /* มุมมน */
+  padding: 5px 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  border: 1px solid #e89ba9; /* ขอบชมพูเข้ม */
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  flex: 1;
+  border-radius: 25px;
+}
+
+.search-bar button {
+  background: #ff85a2; /* สีชมพูสด */
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover {
+  background: #ff6398; /* สีชมพูเข้ม */
+  transform: scale(1.05);
+}
+
+/* Header Links (Buttons) */
 .header-link {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  padding: 8px 15px;
-  background-color: #365899; /* สีพื้นหลังของลิงก์ */
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: #ff85a2; /* สีชมพูสด */
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เงาเบา */
 }
 
 .header-link:hover {
-  background-color: #2d4373; /* สีเมื่อ Hover */
+  background: #ff6398; /* สีชมพูเข้ม */
+  transform: scale(1.1);
 }
+
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+  background: linear-gradient(135deg, #f8c8dc, #fad0c4);
   margin: 0;
   padding: 0;
 }
 
 /* Search Bar */
 .search-bar {
-  background-color: white;
-  padding: 10px 20px;
+  background-color: #fff5f8; /* พื้นหลังชมพูอ่อน */
+  padding: 15px 25px;
   margin: 20px auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px; /* มุมมน */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  border: 2px solid #ffc1d6; /* ขอบชมพูอ่อน */
 }
 
+/* Search Input */
 .search-input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #ffc1d6; /* ขอบชมพู */
+  border-radius: 16px; /* มุมมน */
   margin-right: 10px;
-
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.search-input:focus {
+  border-color: #ff85a2; /* เปลี่ยนสีเมื่อ focus */
+  box-shadow: 0 0 5px rgba(255, 133, 162, 0.5);
+}
+
+/* Search Button */
 .search-button {
-  background-color: #365899; /* สีพื้นหลังของลิงก์ */
+  background-color: #ff85a2; /* สีชมพูสด */
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px; /* มุมมน */
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.search-button:hover {
+  background-color: #ff6398; /* สีชมพูเข้มเมื่อ hover */
+  transform: scale(1.05); /* ขยายเล็กน้อย */
+}
+
+/* Search Form */
 .search-form {
   display: flex;
   align-items: center; /* จัดปุ่มและกล่องให้อยู่ในแนวเดียวกัน */
   justify-content: center; /* จัดให้อยู่ตรงกลาง */
   gap: 10px; /* เพิ่มช่องว่างระหว่างกล่องและปุ่ม */
-  width: 800px; /* ปรับให้เต็มพื้นที่ที่มี */
-
-}
-
-.search-button:hover {
-  background-color: #365899;
+  width: 700px; /* ปรับความกว้าง */
 }
 
 /* Feed */
+/* Feed Container */
 .feed {
   max-width: 800px;
   margin: 20px auto;
   background-color: white;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Individual Post */
 .post {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #f7d4e6;
   padding: 20px 0;
 }
 
-/* กล่องครอบเนื้อหาโพสต์ */
+/* Post Content Box */
 .post-content-box {
-  background-color: #f9f9f9; /* สีพื้นหลัง */
-  border: 1px solid #ddd; /* ขอบ */
-  border-radius: 8px; /* มุมมน */
-  padding: 15px; /* ระยะห่างด้านใน */
-  margin-bottom: 20px; /* เว้นระยะด้านล่าง */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  background: linear-gradient(135deg, #ffe1ec, #ffd1e8); /* ไล่สีชมพู */
+  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
+  border-radius: 16px; /* มุมมน */
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
 }
 
-/* สไตล์หัวข้อ */
+/* Post Title */
 .post-title {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px; /* เว้นระยะด้านล่าง */
-  color: #4267B2;
+  margin-bottom: 10px;
+  color: #ff6699; /* ชมพูเข้ม */
 }
 
-/* สไตล์เนื้อหา */
+/* Post Content */
 .post-content {
   font-size: 16px;
-  margin-bottom: 10px; /* เว้นระยะด้านล่าง */
-  color: #333;
+  margin-bottom: 10px;
+  color: #555;
   line-height: 1.6;
 }
 
-/* สไตล์ผู้เขียน */
+/* Post Author */
 .post-author {
   font-size: 14px;
-  color: #777;
-  text-align: right; /* ชิดขวา */
+  color: #888;
+  text-align: right;
 }
 
-/* Actions */
+/* Post Actions */
 .post-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 
+/* Post Action Links */
 .post-action-link {
-  color: #4267B2;
+  color: #ff85a2;
   text-decoration: none;
 }
 
@@ -161,7 +242,7 @@ body {
   text-decoration: underline;
 }
 
-/* Comments */
+/* Comments Section */
 .comments {
   margin-top: 20px;
 }
@@ -170,112 +251,121 @@ body {
   margin-bottom: 10px;
 }
 
+/* Comment Input */
 .comment-input {
-  width: 100%; /* ปรับให้เต็มพื้นที่ */
-  max-width: 800px; /* กำหนดขนาดความกว้างสูงสุด */
-  height: 100px; /* ความสูงตายตัว */
+  width: 100%;
+  max-width: 800px;
+  height: 100px;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  resize: none; /* ปิดการปรับขนาดของกล่อง */
+  border: 1px solid #ffc1d6;
+  border-radius: 16px;
+  resize: none;
   box-sizing: border-box;
   font-size: 14px;
   line-height: 1.5;
+  background-color: #fff5f8; /* ชมพูอ่อน */
 }
 
+/* Comment Button */
 .comment-button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #4267B2;
+  background-color: #ff85a2;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .comment-button:hover {
-  background-color: #365899;
+  background-color: #ff6699;
 }
 
+/* No Posts */
 .no-posts {
   text-align: center;
-  color: #777;
+  color: #888;
 }
 
-/* Post Actions */
-.post-actions {
-  display: flex;
-  align-items: center; /* จัดให้อยู่แนวกลาง */
-  margin-top: 10px;
-}
-
+/* Like Button */
+/* Like Section */
 .like-section {
   display: flex;
-  align-items: center;
-  gap: 10px; /* ระยะห่างระหว่างตัวเลขและปุ่ม */
+  align-items: center; /* จัดแนวให้อยู่ตรงกลาง */
+  gap: 10px; /* ระยะห่างระหว่างจำนวนไลค์และปุ่ม */
 }
 
 .likes-count {
   margin: 0;
   font-size: 14px;
-  color: #555;
+  color: #555555;
 }
 
+/* Like Button */
+.like-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #ff85a2; /* สีชมพูสด */
+  color: white;
+  border: none; /* เอาขอบออก */
+  border-radius: 8px; /* มุมมน */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.like-button:hover {
+  background-color: #ff6398; /* สีชมพูเข้ม */
+  transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ Hover */
+}
+
+
+/* Action Buttons */
 .action-buttons {
   display: flex;
-  justify-content: flex-end; /* จัดชิดขวา */
-  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-/* ปุ่มทั้งหมด */
+/* All Buttons */
 .button {
   display: inline-block;
-  padding: 8px 15px; /* ขนาดปุ่มให้เท่ากัน */
+  padding: 8px 15px;
   font-size: 14px;
   text-align: center;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
 }
 
-/* ปุ่ม Like */
+/* Like Button */
 .like-button.like {
-  padding: 8px 15px;
-  background-color: #4267B2;
+  background-color: #ff85a2;
   color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .like-button.unlike {
-  padding: 8px 15px;
   background-color: #f44336;
   color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .like-button:hover {
   opacity: 0.9;
 }
 
-/* ปุ่ม Edit */
+/* Edit Button */
 .button-edit {
-  background-color: #ffa500;
+  background-color: #ffb6c1; /* ชมพูพาสเทล */
   color: white;
 }
 
 .button-edit:hover {
-  background-color: #e69500;
+  background-color: #ff99aa;
 }
 
-/* ปุ่ม Delete */
+/* Delete Button */
 .button-delete {
   background-color: #f44336;
   color: white;
@@ -288,8 +378,8 @@ body {
 /* post */
 /* General Styling */
 .body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8c8dc, #fad0c4); /* ไล่สีชมพู */
   margin: 0;
   padding: 0;
   display: flex;
@@ -301,18 +391,19 @@ body {
 .page-container {
   width: 100%;
   max-width: 600px;
-  background-color: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* สีขาว */
+  padding: 30px 40px;
+  border-radius: 20px; /* มุมมน */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
 }
 
 .page-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  color: #4267B2;
+  color: #ff6398; /* ชมพูสด */
+  text-transform: uppercase;
 }
 
 /* Form Styling */
@@ -321,7 +412,7 @@ body {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-label {
@@ -329,20 +420,28 @@ body {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #333;
+  color: #ff6398; /* ชมพูสด */
 }
 
 .form-input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
+  border-radius: 16px; /* มุมมน */
   box-sizing: border-box;
+  background: #fff5f8; /* พื้นหลังชมพูอ่อน */
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-input.textarea {
-  resize: none;
+  resize: none; /* ปิดการปรับขนาด */
+}
+
+.form-input:focus {
+  border-color: #ff85a2; /* ขอบชมพูสดเมื่อ focus */
+  box-shadow: 0 0 6px rgba(255, 133, 162, 0.5); /* เพิ่มเงาเมื่อ focus */
 }
 
 /* Buttons */
@@ -355,122 +454,139 @@ body {
 
 .create-button {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 20px; /* มุมมน */
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Primary Button */
 .button-primary {
-  background-color: #4267B2;
+  background-color: #ff85a2; /* ชมพูสด */
   color: white;
   border: none;
 }
 
 .button-primary:hover {
-  background-color: #365899;
+  background-color: #ff6398; /* ชมพูเข้ม */
+  transform: scale(1.05); /* ขยายเล็กน้อย */
 }
 
+/* Secondary Button */
 .button-secondary {
-  background-color: #ddd;
-  color: #333;
+  background-color: #ff81a5; /* สีเทาอ่อน */
+  color: #ffffff;
   border: none;
 }
 
 .button-secondary:hover {
-  background-color: #ccc;
+  background-color: #ccc; /* สีเทาเข้ม */
+  transform: scale(1.05); /* ขยายเล็กน้อย */
 }
+
 
 /* Sign up Page Styling */
-.signup-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 50px auto;
-  background-color: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+/* Container */
+
+.signup_body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8c8dc, #fad0c4); /* ไล่สีชมพู */
+  margin: 0;
+  height: 100vh; /* ใช้เต็มความสูงของ viewport */
+  display: flex; /* ใช้ Flexbox */
+  justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+  align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
 }
 
+.signup-container {
+  background: #fff5f8; /* พื้นหลังชมพูอ่อน */
+  width: 400px;
+  padding: 30px 40px;
+  border-radius: 20px; /* มุมมน */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  border: 2px solid #ffa6c9; /* ขอบชมพู */
+  text-align: center; /* จัดเนื้อหากลาง */
+}
+/* Title */
 .signup-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #4267B2;
-  text-align: center;
+  margin-bottom: 10px;
+  color: #ff6398; /* สีชมพูสด */
+}
+
+.signup-subtitle {
+  font-size: 1rem;
+  color: #666; /* สีเทาอ่อน */
   margin-bottom: 20px;
 }
 
+/* Form */
 .signup-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px; /* เพิ่มระยะห่างระหว่างกลุ่มฟอร์ม */
 }
 
 .signup-form-group {
   display: flex;
   flex-direction: column;
+  text-align: left; /* ชิดซ้ายในกลุ่มฟอร์ม */
 }
 
 .signup-form-label {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #333;
+  color: #ff6398; /* สีชมพูสด */
 }
 
 .signup-form-input {
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
+  border-radius: 16px; /* มุมมน */
+  background: #fff; /* พื้นหลังสีขาว */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.signup-form-hint {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
+.signup-form-input:focus {
+  border-color: #ff85a2; /* สีชมพูสดเมื่อ focus */
+  box-shadow: 0 0 6px rgba(255, 133, 162, 0.5); /* เพิ่มเงาเมื่อ focus */
 }
 
-.signup-form-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
+/* Button */
 .signup-button {
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 12px 20px;
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.signup-primary {
-  background-color: #4267B2;
-  color: white;
+  border-radius: 20px; /* มุมมน */
   border: none;
+  background: #ff85a2; /* สีชมพูสด */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.signup-primary:hover {
-  background-color: #365899;
+.signup-button:hover {
+  background: #ff6398; /* สีชมพูเข้ม */
+  transform: scale(1.05); /* ขยายเล็กน้อย */
 }
 
+/* Links */
 .signup-links-container {
   margin-top: 20px;
   text-align: center;
 }
 
 .signup-links-container a {
-  color: #4267B2;
+  color: #ff6398; /* สีชมพูสด */
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .signup-links-container a:hover {
@@ -478,100 +594,103 @@ body {
 }
 
 
-/* Login */
-/* General Styling */
+/* Login Body */
+/* Body Styling */
 .Login-body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+  font-family: 'Poppins', sans-serif; /* เปลี่ยนฟอนต์ให้ทันสมัย */
+  background: linear-gradient(135deg, #f8c8dc, #fad0c4); /* ไล่สีชมพู */
   margin: 0;
   padding: 0;
 }
 
+/* Login Container */
 .login-container {
   width: 100%;
   max-width: 400px;
-  background-color: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.login-title {
-  font-size: 24px;
-  font-weight: bold;
+  background-color: #fff; /* พื้นหลังขาว */
+  padding: 30px 40px;
+  border-radius: 20px; /* มุมมน */
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4); /* เงาสีชมพู */
   text-align: center;
-  margin-bottom: 20px;
-  color: #4267B2;
 }
 
-/* กล่องครอบข้อความ Login */
-.login-box {
-  background-color: #f9f9f9; /* สีพื้นหลัง */
-  border: 1px solid #ddd; /* ขอบกล่อง */
-  border-radius: 8px; /* มุมมน */
-  padding: 15px; /* ระยะห่างด้านใน */
-  margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
-  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-}
-
-.login-prompt {
-  margin: 0;
-  font-size: 15px;
-  color: #555; /* สีข้อความ */
-}
-
-.login-link {
-  color: #4267B2; /* สีลิงก์ */
-  text-decoration: none;
+/* Login Title */
+.login-title {
+  font-size: 28px;
   font-weight: bold;
+  color: #ff69b4; /* ชมพูสด */
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-.login-link:hover {
-  text-decoration: underline; /* เส้นใต้เมื่อ Hover */
+/* Form Inputs */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ffc1d6; /* ขอบชมพูอ่อน */
+  border-radius: 12px; /* มุมมน */
+  background-color: #fff5f8; /* สีพื้นหลังชมพูอ่อน */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาภายใน */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* Form Styling */
-.form-checkbox {
-  margin-right: 8px;
+.form-input:focus {
+  border-color: #ff85a2; /* ชมพูสดเมื่อ Focus */
+  box-shadow: 0 0 6px rgba(255, 133, 162, 0.5);
+  outline: none;
 }
 
+/* Form Labels */
+.form-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff69b4; /* ชมพูสด */
+  margin-bottom: 5px;
+}
+
+/* Remember Me */
 .form-checkbox-label {
   font-size: 14px;
-  color: #555;
+  color: #d87093; /* ชมพูปานกลาง */
 }
 
 /* Buttons */
 .login-button {
-  padding: 10px 20px;
   width: 100%;
-  max-width: 400px;
-  font-size: 14px;
+  padding: 12px;
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
+  border: none;
+  border-radius: 20px; /* มุมมน */
+  background-color: #ff85a2; /* ชมพูสด */
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #ff6398; /* ชมพูเข้ม */
+  transform: scale(1.05); /* ขยายเล็กน้อย */
 }
 
 /* Links */
-.links-container {
-  margin-top: 20px;
-  text-align: center;
-}
-
 .links-container a {
-  color: #4267B2;
+  color: #ff6398; /* สีลิงก์ชมพู */
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .links-container a:hover {
+  color: #ff1493; /* ชมพูเข้ม */
   text-decoration: underline;
 }
+
+
+

@@ -1,3 +1,5 @@
-document.querySelector("#post-<%= @post.id %> .like-section").innerHTML = `
-  <%= j render partial: "likes/like_section", locals: { post: @post } %>
+const likeSection = document.querySelector("#post-<%= @post.id %> .like-section");
+likeSection.innerHTML = `
+  <p class="likes-count"><%= @post.likes.count %> Likes</p>
+  <%= button_to "Like", post_like_path(@post), method: :post, remote: true, class: "like-button like" %>
 `;

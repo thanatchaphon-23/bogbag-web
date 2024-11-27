@@ -10,7 +10,7 @@
 </head>
 <body class="Login-body">
   <div class="login-container">
-    <h2 class="login-title">Log in</h2>
+    <h2 class="login-title">💖 Log in 💖</h2>
 
     <div class="form-container">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -37,7 +37,8 @@
       <% end %>
 
       <div class="links-container">
-        <%= render "devise/shared/links" %>
+        <p>New here? <%= link_to "Sign up", new_user_registration_path %></p>
+        <p><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
       </div>
     </div>
   </div>

@@ -6,7 +6,7 @@
   <title>Sign up</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
 </head>
-<body>
+<body class= "signup_body">
   <div class="signup-container">
     <h2 class="signup-title">Sign up</h2>
 
@@ -42,7 +42,8 @@
     <% end %>
 
     <div class="signup-links-container">
-      <%= render "devise/shared/links" %>
+      <p>Already have an account?  <%= render "devise/shared/links" %> </p>
+     
     </div>
   </div>
 </body>
