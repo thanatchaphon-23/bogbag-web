@@ -1,20 +1,4 @@
-/* Header */
-/* Header */
-.header {
-  background: linear-gradient(90deg, #ff85a2, #ff6398); /* ไล่สีชมพูเข้ม */
-  padding: 20px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 3px solid #e57390; /* เส้นขอบล่างสีชมพูเข้ม */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงานุ่ม */
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
 /* Title (Logo) */
-/* Header */
 /* Header */
 .header {
   background: linear-gradient(90deg, #ffb6c1, #ff91af); /* ไล่สีชมพูเข้มขึ้น */
@@ -247,6 +231,13 @@ body {
   margin-top: 20px;
 }
 
+.comments-count {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #555555;
+}
+
 .comment {
   margin-bottom: 10px;
 }
@@ -256,6 +247,7 @@ body {
   width: 100%;
   max-width: 800px;
   height: 100px;
+  margin-top: 10px;
   padding: 10px;
   border: 1px solid #ffc1d6;
   border-radius: 16px;
@@ -692,5 +684,58 @@ body {
   text-decoration: underline;
 }
 
+/* Login Box Styling */
+.login-box {
+  background-color: #ffe6f2; /* สีชมพูอ่อน */
+  border: 2px solid #ff99cc; /* ขอบสีชมพูเข้ม */
+  border-radius: 12px; /* มุมมน */
+  padding: 20px; /* ระยะห่างด้านใน */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
+  margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
+}
+
+.login-prompt {
+  font-size: 16px; /* ขนาดข้อความ */
+  color: #ff66b3; /* สีข้อความ */
+  font-weight: bold;
+  margin: 0;
+}
+
+.login-link {
+  color: #ff66b3; /* สีลิงก์ */
+  font-weight: bold;
+  transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์เวลา hover */
+}
+
+.login-link:hover {
+  color: #cc0066; /* สีเมื่อ hover */
+  text-decoration: underline; /* เพิ่มเส้นใต้เมื่อ hover */
+}
+
+/* Footer */
+/* Footer */
+.footer {
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #ff6699;
+}
+
+.footer a {
+  color: #ff85a2; /* สีลิงก์ */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ff6699; /* สีลิงก์เมื่อ hover */
+}
+
+.footer p {
+  margin: 0;
+  line-height: 1.6;
+}
 
 

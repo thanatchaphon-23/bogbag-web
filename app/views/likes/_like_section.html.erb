@@ -1,0 +1,10 @@
+<div id="like-section-<%= post.id %>" class="like-section">
+  <p class="likes-count"><%= post.likes.count %> Likes</p>
+  <% if user_signed_in? %>
+    <% if current_user.likes.exists?(post: post) %>
+      <%= button_to "Unlike", post_like_path(post), method: :delete, class: "like-button unlike", data: { turbo: true } %>
+    <% else %>
+      <%= button_to "Like", post_like_path(post), method: :post, class: "like-button like", data: { turbo: true } %>
+    <% end %>
+  <% end %>
+</div>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # เส้นทางสำหรับ Posts และ Likes
-  resources :posts, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :posts, only: [:index, :new, :create, :edit, :update, :destroy, :show] do
     resource :like, only: [:create, :destroy] # เส้นทางสำหรับ Like
     resources :comments, only: [:create, :destroy]
   end

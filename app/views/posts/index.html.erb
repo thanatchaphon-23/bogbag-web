@@ -20,7 +20,6 @@
       <% end %>
     </div>
     <nav class="header-right">
-      <!-- Right menu -->
       <% if user_signed_in? %>
         <%= link_to "Create Post", new_post_path, class: "header-link" %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "header-link" %>
@@ -40,20 +39,34 @@
           <div class="post-content-box">
             <h2 class="post-title"><%= post.title %></h2>
             <p class="post-content"><%= post.content %></p>
-            <p class="post-author"><small>Posted by: <%= post.user.username if post.user %></small></p>
-            <p class="post-author"><small><%= post.created_at.strftime("%B %d, %Y %H:%M") %></small></p>
+            <p class="post-author">
+              <small>Posted by: <%= post.user.username if post.user %></small>
+            </p>
+            <p class="post-author">
+              <small><%= post.created_at.strftime("%B %d, %Y %H:%M") %></small>
+            </p>
           </div>
 
           <!-- Post Actions -->
           <div class="post-actions">
             <!-- Like Section -->
-            <div class="like-section">
+            <div class="like-section" id="like-section-<%= post.id %>">
               <p class="likes-count"><%= post.likes.count %> Likes</p>
               <% if user_signed_in? %>
                 <% if current_user.likes.exists?(post: post) %>
-                  <%= button_to "Unlike", post_like_path(post), method: :delete, class: "like-button unlike" %>
+                  <button class="like-button unlike"
+                          data-post-id="<%= post.id %>"
+                          data-url="<%= post_like_path(post) %>"
+                          data-method="delete">
+                    Unlike
+                  </button>
                 <% else %>
-                  <%= button_to "Like", post_like_path(post), method: :post, class: "like-button like" %>
+                  <button class="like-button like"
+                          data-post-id="<%= post.id %>"
+                          data-url="<%= post_like_path(post) %>"
+                          data-method="post">
+                    Like
+                  </button>
                 <% end %>
               <% end %>
             </div>
@@ -62,7 +75,7 @@
             <% if user_signed_in? && post.user == current_user %>
               <div class="action-buttons">
                 <%= link_to "Edit", edit_post_path(post), class: "button button-edit" %>
-                <%= button_to "Delete", post_path(post), method: :delete, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
+                <%= button_to "Delete", post_path(post), method: :delete, remote: true, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
               </div>
             <% end %>
           </div>
@@ -73,8 +86,10 @@
             <% if user_signed_in? %>
               <% post.comments.each do |comment| %>
                 <div class="comment">
-                  <p><strong><%= comment.user.username %>:</strong> <%= comment.content %></p>
-                  <!-- แสดงปุ่มลบถ้าเป็นเจ้าของความคิดเห็น -->
+                  <p>
+                    <strong><%= comment.user.username %>:</strong>
+                    <%= comment.content %>
+                  </p>
                   <% if comment.user == current_user %>
                     <div class="delete-comment">
                       <%= button_to "Delete", post_comment_path(post, comment), method: :delete, class: "button button-delete", onclick: "return confirm('Are you sure?');" %>
@@ -104,8 +119,15 @@
         </div>
       <% end %>
     <% else %>
-      <p class="no-posts">No posts yet. <%= link_to "Sign Up", new_user_registration_path %> to create your first post!</p>
+      <p class="no-posts">
+        No posts yet.
+        <%= link_to "Sign Up", new_user_registration_path %> to create your first post!
+      </p>
     <% end %>
   </div>
 </body>
+<footer class="footer">
+  <p>© 2024 BogBagBook</p>
+  <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+</footer>
 </html>
